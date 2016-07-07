@@ -22,8 +22,8 @@ namespace OmegaTronOnionIO.Controllers
         public Models.FileListing RetrieveFileListing(string path)
         {
             NameValueCollection headers = new NameValueCollection();
-            headers.Add("X-API-KEY", "qfxb676hxcXPSMsG67T7EGrSH5PLmL0hXJKlK54h8qbPI4hjtDFwXcax4nJGzG96");
-            Models.FileListing fileListing = Helpers.JsonHelper.SendToServer<Models.FileListing>("https://api.onion.io/v1/devices/858faf68-af48-44d6-8900-c085d88edd6f/file/list", headers, "{\"path\":\"" + path + "\"}", "POST");
+            headers.Add("X-API-KEY", "<YOUR APIKEY HERE>");
+            Models.FileListing fileListing = Helpers.JsonHelper.SendToServer<Models.FileListing>("https://api.onion.io/v1/devices/<YOUR DEVICEID HERE>/file/list", headers, "{\"path\":\"" + path + "\"}", "POST");
             return fileListing;
         }
 
