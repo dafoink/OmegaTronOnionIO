@@ -1,0 +1,28 @@
+﻿@model OmegaTronOnionIO.Models.FileListing
+@{
+    ViewData["Title"] = "Onion.io File Exporer";
+}
+<div class="container">
+    <h2>@ViewData["Title"]</h2>
+    @using (Html.BeginForm())
+    {
+        @Html.TextBox("path")
+        <button class="btn btn-primary" role="button" value="Search">Search</button>
+    <h3>Listing for @ViewBag.Path</h3>
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        @foreach (var item in Model.entries)
+        {
+            <tr>
+                <td>@item.name</td>
+                <td>@item.type</td>
+            </tr>
+        }
+    </table>
+    }
+</div>
